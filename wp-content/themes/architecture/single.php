@@ -18,6 +18,7 @@
 		}
 	?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	HELLO WORLD
 	<div class="page-wrapper single-blog <?php echo $sidebar_array['sidebar_class']; ?>">
 		<?php
 			global $left_sidebar, $right_sidebar, $default_post_left_sidebar, $default_post_right_sidebar;
@@ -56,52 +57,16 @@
 					echo '</div>';					
 					
 					// blog information
-					echo '<div class="blog-info-wrapper">';
 					
-					echo '<div class="blog-date">';
-					echo '<a href="' . get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d')) . '" >';
-					echo get_the_time($gdl_date_format);
-					echo '</a>';
-					echo '</div>';
 					
-					echo '<div class="blog-author">';
-					echo '<span class="blog-info-head">' . __('By : ','gdl_front_end') . '</span>';
-					echo the_author_posts_link();
-					echo '</div>';			
-					
-					echo '<div class="blog-comment">';
-					echo '<span class="blog-info-head">' . __('Comments : ','gdl_front_end') . '</span>';
-					comments_popup_link( __('0','gdl_front_end'),
-						__('1','gdl_front_end'),
-						__('%','gdl_front_end'), '',
-						__('Off','gdl_front_end') );
-					echo '</div>';	
-
 					echo '<div class="clear"></div>';
 					echo '</div>'; // blog information
 					
 					// About Author
-					if(get_post_meta($post->ID, 'post-option-author-info-enabled', true) != "No"){
-						echo "<div class='about-author-wrapper'>";
-						echo "<div class='about-author-avartar'>" . get_avatar( get_the_author_meta('ID'), 90 ) . "</div>";
-						echo "<div class='about-author-info'>";
-						echo "<h5 class='about-author-title'>" . $translator_about_author . "</h5>";
-						echo get_the_author_meta('description');
-						echo "</div>";
-						echo "<div class='clear'></div>";
-						echo "</div>";
-					}
+					
 					
 					// Include Social Shares
-					if(get_post_meta($post->ID, 'post-option-social-enabled', true) != "No"){
-						echo "<h3 class='social-share-title'>" . $translator_social_share . '</h3>';
-						include_social_shares();
-						echo "<div class='clear'></div>";
-					}
-				
-					echo '<div class="comment-wrapper">';
-					comments_template(); 
-					echo '</div>';
+					
 					
 					echo '</div>'; // blog content wrapper
 				}

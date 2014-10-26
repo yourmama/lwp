@@ -888,8 +888,20 @@ ion: 0.8s;
 
 
 /*Own styles begin*/
+
+/*editing scheme view*/
+.page-header-wrapper{
+	display: none;
+}
+
+
+
+
 /*color scheme =
+*1
 http://colorscheme.ru/#0.31W55--CM--
+*2
+http://colorscheme.ru/#3k51W55--CM--
 */
 
 /*header*/
