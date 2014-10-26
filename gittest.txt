@@ -1,0 +1,5 @@
+str1= alfa
+str2= betta
+str3= gamma
+
+
